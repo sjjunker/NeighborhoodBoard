@@ -1,7 +1,7 @@
 {
   "name": "neighborhoodboard",
   "version": "1.0.0",
-  "type": "module",
+  "type": "commonjs",
   "description": "Place pins in your neighborhood of things going on.",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,8 @@
   "dependencies": {
     "@arcgis/core": "^4.31.5",
     "@esri/arcgis-rest-feature-service": "^4.0.6",
-    "@esri/arcgis-rest-request": "^4.2.3"
+    "@esri/arcgis-rest-request": "^4.2.3",
+    "@esri/calcite-components": "^2.13.2"
   },
   "devDependencies": {
     "eslint": "^9.15.0",
