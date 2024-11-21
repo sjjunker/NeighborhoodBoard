@@ -1,6 +1,7 @@
 {
   "name": "neighborhoodboard",
   "version": "1.0.0",
+  "type": "module",
   "description": "Place pins in your neighborhood of things going on.",
   "main": "index.js",
   "scripts": {
