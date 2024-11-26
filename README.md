@@ -6,7 +6,7 @@ My purpose for writing this application was to gain experience using maps in my 
 
 Also, I first started this project trying to build an app in iOS. I spent several hours trying to figure out how to add, update, and delete features in app before I realized there is no ArcGIS support for these functionalities in Swift. Ultimately, I determined it was best to use Apple's own map feautres for an iOS app, and I switched to making a web app instead.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/MBPiNhYeEDU)
 
 # Development Environment
 
@@ -42,3 +42,4 @@ Also, I first started this project trying to build an app in iOS. I spent severa
 * Improve styling.
 * Make real header and footers.
 * Give user feedback when a user adds/updates/deletes a feature.
+* Implement authentification.
