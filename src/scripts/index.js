@@ -2,6 +2,7 @@ import WebMap from "@arcgis/core/WebMap";
 import MapView from "@arcgis/core/views/MapView";
 import Graphic from "@arcgis/core/Graphic";
 import showModal from "./popup.mjs";
+import addFeatureModal from "./addFeature.mjs";
 import "../styles/index.css";
 
 //Map and Map View
@@ -75,34 +76,43 @@ webmap.when(() => {
 
 // Add features once the view is ready
 function addFeature(lat, long, featureLayer) {
-    if (featureLayer) {
-        // Create features to add
-        const newFeature =
-            new Graphic({
-                geometry: {
-                    type: "point",
-                    longitude: long,
-                    latitude: lat
-                },
-                attributes: {
-                    description: "Test Feature",
-                    name: "This is a test feature",
-                    category: "Test Category",
-                    "Photos And Files": ""
-                }
-            });
+    //Show the modal
+    addFeatureModal();
 
-        // Add features to the FeatureLayer
-        featureLayer
-            .applyEdits({
-                addFeatures: [newFeature]
-            })
-            .then((result) => {
-                console.log("Features added:", result);
-            })
-            .catch((error) => {
-                console.error("Error adding features:", error);
-            });
+    if (featureLayer) {
+        //listen for add button click
+        document.getElementById("add-button").addEventListener("click", () => {
+
+            // Create features to add
+            const newFeature =
+                new Graphic({
+                    geometry: {
+                        type: "point",
+                        longitude: long,
+                        latitude: lat
+                    },
+                    attributes: {
+                        description: document.getElementById("description").value,
+                        name: document.getElementById("object-name").value,
+                        category: document.getElementById("category").value,
+                        "Photos And Files": ""
+                    }
+                });
+
+            // Add features to the FeatureLayer
+            featureLayer
+                .applyEdits({
+                    addFeatures: [newFeature]
+                })
+                .then((result) => {
+                    console.log("Features added:", result);
+                })
+                .catch((error) => {
+                    console.error("Error adding features:", error);
+                });
+
+            document.getElementById("add-feature-modal").remove();
+        });
     } else {
         console.error("FeatureLayer not found in the WebMap.");
     }

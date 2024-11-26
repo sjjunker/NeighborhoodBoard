@@ -22,21 +22,18 @@ export default function showModal() {
     formName.name = "object-name";
     formName.id = "object-name";
     formName.type = "text";
-    formName.label = "Name";
     nameLabel.setAttribute("for", formName);
     nameLabel.innerHTML = "Name";
 
     formCategory.name = "category";
     formCategory.id = "category";
     formCategory.type = "text";
-    formCategory.label = "Category";
     categoryLabel.setAttribute("for", formCategory);
     categoryLabel.innerHTML = "Category";
 
     formDescription.name = "description";
     formDescription.id = "description";
     formDescription.type = "text";
-    formDescription.label = "Description";
     descriptionLabel.setAttribute("for", formDescription);
     descriptionLabel.innerHTML = "Description";
 
@@ -52,8 +49,11 @@ export default function showModal() {
     updateDeleteButtons.appendChild(updateButton);
     updateDeleteButtons.appendChild(deleteButton);
 
+    modalForm.appendChild(nameLabel);
     modalForm.appendChild(formName);
+    modalForm.appendChild(categoryLabel);
     modalForm.appendChild(formCategory);
+    modalForm.appendChild(descriptionLabel);
     modalForm.appendChild(formDescription);
     modalForm.appendChild(updateDeleteButtons);
 
