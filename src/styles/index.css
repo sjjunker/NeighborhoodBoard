@@ -10,3 +10,32 @@
     height: 100vh;
     width: 100%;
 }
+
+main {
+    position: relative;
+}
+
+#update-delete-modal {
+    position: absolute;
+    padding: 1rem;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+    background-color: azure;
+    border-radius: 1rem;
+}
+
+#modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+}
+
+#update-delete-buttons {
+    display: flex;
+    justify-content: space-between;
+}
